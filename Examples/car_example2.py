@@ -18,7 +18,6 @@ class Car:
             self.speed = 0
         elif self.speed + speed_change >= 150:
             self.speed = 150
-        # TODO: jos uusi nopeus > maksimi: nopeus = maksimi
 
 someCar = Car("ABC-123", 120)
 otherCar = Car("DEF-456", 150)

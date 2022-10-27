@@ -37,6 +37,3 @@ someCar = Car("ABC-123", 142)
 someCar.accelerate(60)
 someCar.travel_distance(1.5)
 someCar.print_travel_distance()
-
-
-

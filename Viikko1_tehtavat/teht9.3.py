@@ -34,6 +34,8 @@ class Car:
         print(f"The total amount of travelled is {int(self.odometer)} km.")
 
 someCar = Car("ABC-123", 142)
+someCar.print_travel_distance()
+print("Accelerating from 0km/h to 60km/h. Then travelling 60km/h for 1h 30minutes.")
 someCar.accelerate(60)
 someCar.travel_distance(1.5)
 someCar.print_travel_distance()

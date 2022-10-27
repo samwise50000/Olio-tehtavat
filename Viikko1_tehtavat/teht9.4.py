@@ -25,7 +25,7 @@ class Car:
               f", which topspeed is: {self.maxspeed} km/h"
               f", which current speed is: {self.speed} km/h"
               f", which total travelled distance is: {self.odometer} km"
-              f", which total time it took to get distance travelled to 10 000km was: {self.travel_hours}")
+              f", which total time it took to get distance travelled to 10 000km was: {self.travel_hours} hours.")
 
     def accelerate(self, speed_change):
         if 0 < self.speed + speed_change < self.maxspeed:
@@ -59,4 +59,5 @@ for car in cars:
         if car.odometer >= race_total_distance:
             Car.print_info(car)
 
+print("Winner is the car that travelled 10 000km with the lowest amount of hours.")
 

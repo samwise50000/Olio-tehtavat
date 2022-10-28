@@ -18,9 +18,6 @@ class Car:
         print(f"The total travelled distance is: {self.odometer} km.")
 
 
-    def accelerate(self):
-        self.speed = self.speed + 3
-
 someCar = Car("ABC-123", 142)
 
 someCar.print_info()

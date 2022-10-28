@@ -44,7 +44,7 @@ class Car:
 
 def car_make():
     cars = []
-    for x in range(11):
+    for x in range(10):
         cars.append(Car("ABC-" + str(x), random.randint(100, 200)))
     return cars
 

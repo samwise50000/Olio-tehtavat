@@ -5,28 +5,49 @@
 # Kirjoita pääohjelmaan lauseet talon luomiseksi ja talon hisseillä ajelemiseksi.
 
 class Hissi:
-    def __init__(self, lowest_floor, highest_floor):
-        self.highest_floor = highest_floor
-        self.lowest_floor = lowest_floor
-        self.current_floor = 1
-
+    def __init__(self, alin_kerros, ylin_kerros):
+        self.ylin_kerros = ylin_kerros
+        self.alin_kerros = alin_kerros
+        self.nykyinen_kerros = 1
 
     def siirry_kerrokseen(self, haluttu_kerros):
-        if self.current_floor < haluttu_kerros:
-            for x in range(self.current_floor, haluttu_kerros):
-                self.kerros_ylos()
+        if self.nykyinen_kerros < haluttu_kerros:
+            for x in range(self.nykyinen_kerros, haluttu_kerros):
+                if self.nykyinen_kerros < self.ylin_kerros:
+                    self.kerros_ylos()
+
         else:
-            for x in range(haluttu_kerros, self.current_floor):
-                self.kerros_alas()
+            for x in range(haluttu_kerros, self.nykyinen_kerros):
+                if self.nykyinen_kerros > self.alin_kerros:
+                    self.kerros_alas()
 
     def kerros_ylos(self):
-        self.current_floor += 1
-        print(self.current_floor)
+        self.nykyinen_kerros += 1
+        print(self.nykyinen_kerros)
 
     def kerros_alas(self):
-        self.current_floor -= 1
-        print(self.current_floor)
+        self.nykyinen_kerros -= 1
+        print(self.nykyinen_kerros)
 
-hissi = Hissi(1, 6)
-hissi.siirry_kerrokseen(5)
-hissi.siirry_kerrokseen(1)
+
+class Talo:
+    def __init__(self, alin_kerros, ylin_kerros, hissien_maara):
+        self.alin_kerros = alin_kerros
+        self.ylin_kerros = ylin_kerros
+        self.hissien_maara = hissien_maara
+
+        self.hissit = []
+
+        for x in range(hissien_maara):
+            h = Hissi(alin_kerros, ylin_kerros)
+            self.hissit.append(h)
+
+    def aja_hissia(self, hissin_numero, hissin_kohdekerros):
+        for x in range(self.hissien_maara):
+            if x == hissin_numero:
+                hissi = self.hissit[x]
+                hissi.siirry_kerrokseen(hissin_kohdekerros)
+
+
+talo = Talo(1, 5, 3)
+talo.aja_hissia(2, 4)

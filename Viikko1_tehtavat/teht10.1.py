@@ -9,16 +9,28 @@
 import random
 
 class Hissi:
-    def __init__(self, register_number, max_speed):
-        self.register_number = register_number
-        self.maxspeed = max_speed
-        self.odometer = 0
-        self.speed = 0
-        self.travel_hours = 0
+    def __init__(self, lowest_floor, highest_floor):
+        self.highest_floor = highest_floor
+        self.lowest_floor = lowest_floor
+        self.current_floor = 1
 
-    def print_info(self):
-        print(f"Car register number is: {self.register_number}"
-              f", which topspeed is: {self.maxspeed} km/h"
-              f", which current speed is: {self.speed} km/h"
-              f", which total travelled distance is: {self.odometer} km"
-              f", which total time it took to get distance travelled to 10 000km was: {self.travel_hours} hours.")
+
+    def siirry_kerrokseen(self, haluttu_kerros):
+        if self.current_floor < haluttu_kerros:
+            for x in range(self.current_floor, haluttu_kerros):
+                self.kerros_ylos()
+        else:
+            for x in range(haluttu_kerros, self.current_floor):
+                self.kerros_alas()
+
+    def kerros_ylos(self):
+        self.current_floor += 1
+        print(self.current_floor)
+
+    def kerros_alas(self):
+        self.current_floor -= 1
+        print(self.current_floor)
+
+hissi = Hissi(1, 6)
+hissi.siirry_kerrokseen(5)
+hissi.siirry_kerrokseen(1)

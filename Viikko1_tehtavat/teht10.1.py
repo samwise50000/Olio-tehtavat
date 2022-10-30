@@ -32,7 +32,5 @@ class Hissi:
         print(self.current_floor)
 
 hissi = Hissi(1, 6)
-hissi2 = Hissi(1, 20)
-hissi.
 hissi.siirry_kerrokseen(5)
 hissi.siirry_kerrokseen(1)

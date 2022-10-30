@@ -23,11 +23,11 @@ class Hissi:
 
     def kerros_ylos(self):
         self.nykyinen_kerros += 1
-        print(self.nykyinen_kerros)
+        print(f"Nykyinen kerros on: {self.nykyinen_kerros}")
 
     def kerros_alas(self):
         self.nykyinen_kerros -= 1
-        print(self.nykyinen_kerros)
+        print(f"Nykinen kerros on: {self.nykyinen_kerros}")
 
 
 class Talo:
@@ -46,8 +46,14 @@ class Talo:
         for x in range(self.hissien_maara):
             if x == hissin_numero:
                 hissi = self.hissit[x]
+                print(f"Liikutaan hissillä: {x}, kerroksesta {hissi.nykyinen_kerros}")
                 hissi.siirry_kerrokseen(hissin_kohdekerros)
+                print(f"Hissi {x} on nyt kerroksessa {hissin_kohdekerros}.")
+
+
 
 
 talo = Talo(1, 5, 3)
+talo.aja_hissia(0, 3)
+talo.aja_hissia(1, 2)
 talo.aja_hissia(2, 4)

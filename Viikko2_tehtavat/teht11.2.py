@@ -60,5 +60,6 @@ for t in autot:
 race = Race(3, autot)
 race.auton_nopeus_laskenta()
 race.ajaminen()
+print("Lähdetään kulkemaan. Kolmen tunnin jälkeen on seuraavanlainen tilanne alla tietoina.")
 for t in autot:
     t.print_info()

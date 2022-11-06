@@ -48,7 +48,7 @@ def get_the_weather(lat, lon):
     celcius = degrees
     return round(celcius, 2)
 city = input("Give any city name: ")
-API_key = ("14112fd30bc018d0c6c3c1a190ffbb3f")
+API_key = ("f03a35e636320af634cf257b625a0dd8")
 latitude = get_latitude(city)
 longitude = get_longitude(city)
 celcius = get_the_weather(latitude, longitude)

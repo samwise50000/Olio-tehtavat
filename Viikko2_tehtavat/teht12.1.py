@@ -13,5 +13,5 @@ try:
         print(joke["value"])
     else:
         print("Check URL- address!")
-except:
+except requests.exceptions.RequestException as e:
     print("Error, no internet connection?")

@@ -14,4 +14,4 @@ try:
     else:
         print("Check URL- address!")
 except requests.exceptions.RequestException as e:
-    print("Error, no internet connection?")
+    print(f"Error, no internet connection? Error: {e}")

@@ -5,5 +5,9 @@
 import requests
 
 get_joke = "https://api.chucknorris.io/jokes/random"
-joke = requests.get(get_joke).json()
-print(joke["value"])
+
+try:
+    joke = requests.get(get_joke).json()
+    print(joke["value"])
+except:
+    print("Error, no internet connection?")

@@ -7,7 +7,11 @@ import requests
 get_joke = "https://api.chucknorris.io/jokes/random"
 
 try:
-    joke = requests.get(get_joke).json()
-    print(joke["value"])
+    response = requests.get(get_joke)
+    if response.status_code == 200:
+        joke = response.json()
+        print(joke["value"])
+    else:
+        print("Check URL- address!")
 except:
     print("Error, no internet connection?")
